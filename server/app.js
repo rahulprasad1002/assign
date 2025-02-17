@@ -19,7 +19,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ALLOWED_ORIGINS,
+    // origin: ALLOWED_ORIGINS,
+    origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], // Methods you want to allow
     allowedHeaders: '*', // Specify headers you want to allow
     exposedHeaders: '*', // Expose all headers
