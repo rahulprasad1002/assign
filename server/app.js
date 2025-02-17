@@ -38,7 +38,7 @@ app.use(
     },
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS', 'HEAD'], // Methods you want to allow
     allowedHeaders: ['Content-Type', 'Authorization'], // Specify headers you want to allow
-    exposedHeaders: '*',
+    exposedHeaders: ['set-cookie'],
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
   })
 );
