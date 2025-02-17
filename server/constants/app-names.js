@@ -1,0 +1,4 @@
+export const APP_NAMES = {
+  DRIVADO: 'DRIVADO',
+  TRACKLIMO: 'TRACKLIMO',
+};
