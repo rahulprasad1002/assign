@@ -56,12 +56,16 @@ export const authenticate = async (req, res, next) => {
           httpOnly: true,
           secure: process.env.NODE_ENV === 'production',
           sameSite: 'Strict',
+          maxAge: 60 * 60 * 24 * 365 * 1000, // 1 year in milliseconds
+          expires: new Date(Date.now() + 60 * 60 * 24 * 365 * 1000), // 1 year from now
         });
         // Set new Access Token in cookies
         res.cookie('accessToken', newAccessToken, {
           httpOnly: true,
           secure: process.env.NODE_ENV === 'production',
           sameSite: 'Strict',
+          maxAge: 60 * 60 * 24 * 365 * 1000, // 1 year in milliseconds
+          expires: new Date(Date.now() + 60 * 60 * 24 * 365 * 1000), // 1 year from now
         });
 
         // Fetch Latest User Data and attach it to req.user

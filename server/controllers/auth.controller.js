@@ -53,12 +53,16 @@ export const signUpController = async (req, res, next) => {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'Strict',
+      maxAge: 60 * 60 * 24 * 365 * 1000, // 1 year in milliseconds
+      expires: new Date(Date.now() + 60 * 60 * 24 * 365 * 1000), // 1 year from now
     });
     // Set Access Token in HTTP-only Cookie
     res.cookie('accessToken', accessToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'Strict',
+      maxAge: 60 * 60 * 24 * 365 * 1000, // 1 year in milliseconds
+      expires: new Date(Date.now() + 60 * 60 * 24 * 365 * 1000), // 1 year from now
     });
 
     // Exclude refreshToken before sending response
@@ -126,12 +130,16 @@ export const signInController = async (req, res, next) => {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'Strict',
+      maxAge: 60 * 60 * 24 * 365 * 1000, // 1 year in milliseconds
+      expires: new Date(Date.now() + 60 * 60 * 24 * 365 * 1000), // 1 year from now
     });
     // Set Access Token in HTTP-only Cookie
     res.cookie('accessToken', accessToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'Strict',
+      maxAge: 60 * 60 * 24 * 365 * 1000, // 1 year in milliseconds
+      expires: new Date(Date.now() + 60 * 60 * 24 * 365 * 1000), // 1 year from now
     });
 
     // Exclude sensitive data from the user object before sending it in response
