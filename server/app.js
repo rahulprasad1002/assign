@@ -13,6 +13,8 @@ import { connectToMongo } from './database/mongodb.js';
 
 const app = express();
 
+app.set('trust proxy', 1);
+
 // Essential Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
