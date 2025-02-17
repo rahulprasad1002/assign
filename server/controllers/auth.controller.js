@@ -52,7 +52,7 @@ export const signUpController = async (req, res, next) => {
     res.cookie('refreshToken', refreshToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'Strict',
+      sameSite: 'None',
       maxAge: 60 * 60 * 24 * 365 * 1000, // 1 year in milliseconds
       expires: new Date(Date.now() + 60 * 60 * 24 * 365 * 1000), // 1 year from now
     });
@@ -60,7 +60,7 @@ export const signUpController = async (req, res, next) => {
     res.cookie('accessToken', accessToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'Strict',
+      sameSite: 'None',
       maxAge: 60 * 60 * 24 * 365 * 1000, // 1 year in milliseconds
       expires: new Date(Date.now() + 60 * 60 * 24 * 365 * 1000), // 1 year from now
     });
@@ -129,7 +129,7 @@ export const signInController = async (req, res, next) => {
     res.cookie('refreshToken', refreshToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'Strict',
+      sameSite: 'None',
       maxAge: 60 * 60 * 24 * 365 * 1000, // 1 year in milliseconds
       expires: new Date(Date.now() + 60 * 60 * 24 * 365 * 1000), // 1 year from now
     });
@@ -137,7 +137,7 @@ export const signInController = async (req, res, next) => {
     res.cookie('accessToken', accessToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'Strict',
+      sameSite: 'None',
       maxAge: 60 * 60 * 24 * 365 * 1000, // 1 year in milliseconds
       expires: new Date(Date.now() + 60 * 60 * 24 * 365 * 1000), // 1 year from now
     });
