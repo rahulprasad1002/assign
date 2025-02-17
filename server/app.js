@@ -22,9 +22,13 @@ app.use(
     origin: ALLOWED_ORIGINS,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], // Methods you want to allow
     allowedHeaders: '*', // Specify headers you want to allow
+    exposedHeaders: '*', // Expose all headers
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
   })
 );
+
+// Handle Preflight Requests Manually (if needed)
+app.options('*', cors()); // Allows preflight requests globally
 
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/requirements', requirementRoutes);
