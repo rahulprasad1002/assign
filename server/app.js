@@ -13,7 +13,7 @@ import { connectToMongo } from './database/mongodb.js';
 
 const app = express();
 
-app.set('trust proxy', 1);
+app.set('trust proxy', true);
 
 // Essential Middlewares
 app.use(express.json());
@@ -28,6 +28,7 @@ app.use(
       if (!origin) return callback(null, true);
       if (ALLOWED_ORIGINS.indexOf(origin) === -1) {
         console.log(origin);
+        console.log(ALLOWED_ORIGINS.indexOf(origin));
         var msg =
           'The CORS policy for this site does not ' +
           'allow access from the specified Origin.';
