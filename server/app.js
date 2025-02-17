@@ -25,6 +25,7 @@ app.use(
       // (like mobile apps or curl requests)
       if (!origin) return callback(null, true);
       if (ALLOWED_ORIGINS.indexOf(origin) === -1) {
+        console.log(origin);
         var msg =
           'The CORS policy for this site does not ' +
           'allow access from the specified Origin.';
@@ -32,7 +33,7 @@ app.use(
       }
       return callback(null, true);
     },
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], // Methods you want to allow
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS', 'HEAD'], // Methods you want to allow
     allowedHeaders: ['Content-Type', 'Authorization'], // Specify headers you want to allow
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
   })
