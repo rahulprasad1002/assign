@@ -21,8 +21,7 @@ app.use(
   cors({
     origin: ALLOWED_ORIGINS,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], // Methods you want to allow
-    allowedHeaders: '*', // Specify headers you want to allow
-    exposedHeaders: '*', // Expose all headers
+    allowedHeaders: ['Content-Type', 'Authorization'], // Specify headers you want to allow
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
   })
 );
